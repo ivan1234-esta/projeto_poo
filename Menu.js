@@ -1,14 +1,14 @@
 import promptSync from "prompt-sync";
 import { Cadastro } from "./cadastro.js";
 import { vetorFilmes } from "./filme.js";
-import { vetorSeries } from "./series.js"; 
+import { dataSeries } from "./series.js"; 
 const prompt = promptSync();
 
 export class Menu {
   constructor() {
     this.cadastro = new Cadastro();
     this.vetorFilmes = vetorFilmes; 
-    this.vetorSeries = vetorSeries; 
+    this.dataSeries = dataSeries; 
   }
 
   mostrarMenu() {
@@ -106,8 +106,8 @@ export class Menu {
     this.mostrarMenuSeries();
     const opcao = prompt("Escolha a série pelo número: ");
 
-    if (opcao >= 1 && opcao <= this.vetorSeries.length) {
-      const serieSelecionada = this.vetorSeries[opcao - 1];
+    if (opcao >= 1 && opcao <= this.dataSeries.length) {
+      const serieSelecionada = this.dataSeries[opcao - 1];
       console.log(
         `Você está assistindo ao filme: ${serieSelecionada.nomeSerie}`
       );
@@ -136,8 +136,8 @@ export class Menu {
       case "2":
         this.mostrarMenuSeries();
         const opcaoSerie = prompt("Escolha a série pelo número: ");
-        if (opcaoSerie >= 1 && opcaoSerie <= this.vetorSeries.length) {
-          const serieSelecionada = this.vetorSeries[opcaoSerie - 1];
+        if (opcaoSerie >= 1 && opcaoSerie <= this.dataSeries.length) {
+          const serieSelecionada = this.dataSeries[opcaoSerie - 1];
           console.log(serieSelecionada.compartilhar());
           console.log("Compartilhado com sucesso!");
         } else {
@@ -158,7 +158,7 @@ export class Menu {
 
   mostrarMenuSeries() {
     console.log("\n--- Lista de Séries ---");
-    this.vetorSeries.forEach((serie, index) => {
+    this.dataSeries.forEach((serie, index) => {
       console.log(`${index + 1}. ${serie.nomeSerie}`);
     });
   }
