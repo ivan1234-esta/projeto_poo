@@ -1,24 +1,23 @@
 import promptSync from "prompt-sync";
 import { Cadastro } from "./cadastro.js";
 import { vetorFilmes } from "./filme.js";
-import { vetorSeries } from "./series.js"; // Importa o vetor de séries
-
+import { vetorSeries } from "./series.js"; 
 const prompt = promptSync();
 
 export class Menu {
   constructor() {
     this.cadastro = new Cadastro();
-    this.vetorFilmes = vetorFilmes; // Importa o vetor de filmes
-    this.vetorSeries = vetorSeries; // Importa o vetor de séries
+    this.vetorFilmes = vetorFilmes; 
+    this.vetorSeries = vetorSeries; 
   }
 
   mostrarMenu() {
-    let opcao;
+    const opcao;
     do {
       console.log("\n--- Menu ---");
-      console.log("1. Login");
-      console.log("2. Cadastro");
-      console.log("3. Sair");
+      console.log("1 - Login");
+      console.log("2 - Cadastro");
+      console.log("3 - Sair");
       opcao = prompt("Escolha uma opção: ");
 
       switch (opcao) {
@@ -38,7 +37,7 @@ export class Menu {
   }
 
   cadastrarUsuario() {
-    console.log("\n--- Cadastro de Usuário ---");
+    console.log("\n--- Cadastro de Clientes ---");
     const nome = prompt("Nome: ");
     const email = prompt("Email: ");
     const senha = prompt("Senha: ");
@@ -47,7 +46,7 @@ export class Menu {
   }
 
   login() {
-    console.log("\n--- Login de Usuário ---");
+    console.log("\n--- Login de Clientes ---");
     const email = prompt("Email: ");
     const senha = prompt("Senha: ");
 
@@ -58,7 +57,7 @@ export class Menu {
       console.log(resultadoLogin);
 
       if (resultadoLogin === "Login efetuado") {
-        let opcao;
+        const opcao;
         do {
           console.log("\n--- Menu Logado ---");
           console.log("1. Assistir Filme");
@@ -89,8 +88,6 @@ export class Menu {
       console.log("Usuário não encontrado. Faça o cadastro primeiro.");
     }
   }
-
-  // Método para assistir filme
   assistirFilme() {
     console.log("\n--- Assistir Filme ---");
     this.mostrarMenuFilmes();
@@ -104,9 +101,6 @@ export class Menu {
       console.log("Opção inválida.");
     }
   }
-
-  // Método para assistir série
-
   assistirSerie() {
     console.log("\n--- Assistir Série ---");
     this.mostrarMenuSeries();
@@ -123,7 +117,6 @@ export class Menu {
     }
   }
 
-  // Método para compartilhar filmes ou séries
   compartilhar() {
     console.log("\n--- Compartilhar ---");
     const opcao = prompt("Escolha o tipo de mídia (1. Filme / 2. Série): ");
@@ -156,7 +149,6 @@ export class Menu {
     }
   }
 
-  // Método para mostrar o menu de filmes
   mostrarMenuFilmes() {
     console.log("\n--- Lista de Filmes ---");
     this.vetorFilmes.forEach((filme, index) => {
@@ -164,7 +156,6 @@ export class Menu {
     });
   }
 
-  // Método para mostrar o menu de séries
   mostrarMenuSeries() {
     console.log("\n--- Lista de Séries ---");
     this.vetorSeries.forEach((serie, index) => {
@@ -173,6 +164,5 @@ export class Menu {
   }
 }
 
-// Exemplo de uso do Menu
 const menu = new Menu();
 menu.mostrarMenu();
