@@ -1,6 +1,6 @@
 import { Clientes } from "./clientes.js";
 
-export class Cadastro{
+export class Cadastro {
   constructor(){
     this.usuarios = [];
   }
