@@ -1,13 +1,13 @@
 import promptSync from "prompt-sync";
 import { Cadastro } from "./cadastro.js";
-import { vetorFilmes } from "./filme.js";
+import { dataFilmes } from "./filme.js";
 import { dataSeries } from "./series.js"; 
 const prompt = promptSync();
 
 export class Menu {
   constructor() {
     this.cadastro = new Cadastro();
-    this.vetorFilmes = vetorFilmes; 
+    this.dataFilmes = dataFilmes; 
     this.dataSeries = dataSeries; 
   }
 
@@ -93,8 +93,8 @@ export class Menu {
     this.mostrarMenuFilmes();
     const opcao = prompt("Escolha o filme pelo número: ");
 
-    if (opcao >= 1 && opcao <= this.vetorFilmes.length) {
-      const filmeSelecionado = this.vetorFilmes[opcao - 1];
+    if (opcao >= 1 && opcao <= this.dataFilmes.length) {
+      const filmeSelecionado = this.dataFilmes[opcao - 1];
       console.log(`Você está assistindo ao filme: ${filmeSelecionado.nome}`);
       console.log(filmeSelecionado.assistir());
     } else {
@@ -125,8 +125,8 @@ export class Menu {
       case "1":
         this.mostrarMenuFilmes();
         const opcaoFilme = prompt("Escolha o filme pelo número: ");
-        if (opcaoFilme >= 1 && opcaoFilme <= this.vetorFilmes.length) {
-          const filmeSelecionado = this.vetorFilmes[opcaoFilme - 1];
+        if (opcaoFilme >= 1 && opcaoFilme <= this.dataFilmes.length) {
+          const filmeSelecionado = this.dataFilmes[opcaoFilme - 1];
           console.log(filmeSelecionado.compartilhar());
           console.log("Compartilhado com sucesso!");
         } else {
@@ -151,7 +151,7 @@ export class Menu {
 
   mostrarMenuFilmes() {
     console.log("\n--- Lista de Filmes ---");
-    this.vetorFilmes.forEach((filme, index) => {
+    this.dataFilmes.forEach((filme, index) => {
       console.log(`${index + 1}. ${filme.nome}`);
     });
   }
