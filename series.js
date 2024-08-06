@@ -1,6 +1,5 @@
 import Filme from "./filme.js";
 
-// Definição da classe Series que estende Filme
 export default class Series extends Filme {
   constructor(nome, nomeSerie, duracao, sinopse, ano, episodio, temporada) {
     super(nome, duracao, sinopse, ano);
@@ -18,8 +17,7 @@ export default class Series extends Filme {
   }
 }
 
-// Vetor Series
-let vetorSeries = [
+const vetorSeries = [
   {
     id: "Série 1",
     nome: "Breaking Bad",
