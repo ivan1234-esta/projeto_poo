@@ -12,15 +12,15 @@ export class Menu {
   }
 
   mostrarMenu() {
-    const opcao;
+    let escolha;
     do {
       console.log("\n--- Menu ---");
       console.log("1 - Login");
       console.log("2 - Cadastro");
       console.log("3 - Sair");
-      opcao = prompt("Escolha uma opção: ");
+      escolha = prompt("Escolha uma opção: ");
 
-      switch (opcao) {
+      switch (escolha) {
         case "1":
           this.login();
           break;
@@ -33,7 +33,7 @@ export class Menu {
         default:
           console.log("Opção inválida, tente novamente.");
       }
-    } while (opcao !== "3");
+    } while (escolha !== "3");
   }
 
   cadastrarUsuario() {
@@ -41,7 +41,7 @@ export class Menu {
     const nome = prompt("Nome: ");
     const email = prompt("Email: ");
     const senha = prompt("Senha: ");
-    this.cadastro.cadastrarUsuario(nome, email, senha);
+    this.cadastro.cadastrarData(nome, email, senha);
     console.log("Usuário cadastrado com sucesso!");
   }
 
@@ -50,23 +50,23 @@ export class Menu {
     const email = prompt("Email: ");
     const senha = prompt("Senha: ");
 
-    const usuario = this.cadastro.encontrarUsuario(email);
+    const usuario = this.cadastro.acharUsuario(email);
 
     if (usuario) {
-      const resultadoLogin = usuario.fazerLogin(email, senha);
+      const resultadoLogin = usuario.loginData(email, senha);
       console.log(resultadoLogin);
 
-      if (resultadoLogin === "Login efetuado") {
-        const opcao;
+      if (resultadoLogin == "Login efetuado com sucesso") {
+        let escolha;
         do {
-          console.log("\n--- Menu Logado ---");
-          console.log("1. Assistir Filme");
-          console.log("2. Assistir Série");
+          console.log("\n--- Menu ---");
+          console.log("1. Ver Filme");
+          console.log("2. Ver Série");
           console.log("3. Compartilhar");
-          console.log("4. Deslogar");
-          opcao = prompt("Escolha uma opção: ");
+          console.log("4. Logout");
+          escolha = prompt("Selecione uma opção: ");
 
-          switch (opcao) {
+          switch (escolha) {
             case "1":
               this.assistirFilme();
               break;
@@ -82,34 +82,36 @@ export class Menu {
             default:
               console.log("Opção inválida, tente novamente.");
           }
-        } while (opcao !== "4");
+        } while (escolha !== "4");
       }
     } else {
       console.log("Usuário não encontrado. Faça o cadastro primeiro.");
     }
   }
+
   assistirFilme() {
     console.log("\n--- Assistir Filme ---");
     this.mostrarMenuFilmes();
-    const opcao = prompt("Escolha o filme pelo número: ");
+    const escolha = prompt("Escolha o filme pelo número: ");
 
-    if (opcao >= 1 && opcao <= this.dataFilmes.length) {
-      const filmeSelecionado = this.dataFilmes[opcao - 1];
+    if (escolha >= 1 && escolha <= this.dataFilmes.length) {
+      const filmeSelecionado = this.dataFilmes[escolha - 1];
       console.log(`Você está assistindo ao filme: ${filmeSelecionado.nome}`);
       console.log(filmeSelecionado.assistir());
     } else {
       console.log("Opção inválida.");
     }
   }
+
   assistirSerie() {
     console.log("\n--- Assistir Série ---");
     this.mostrarMenuSeries();
-    const opcao = prompt("Escolha a série pelo número: ");
+    const escolha = prompt("Escolha a série pelo número: ");
 
-    if (opcao >= 1 && opcao <= this.dataSeries.length) {
-      const serieSelecionada = this.dataSeries[opcao - 1];
+    if (escolha >= 1 && escolha <= this.dataSeries.length) {
+      const serieSelecionada = this.dataSeries[escolha - 1];
       console.log(
-        `Você está assistindo ao filme: ${serieSelecionada.nomeSerie}`
+        `Você está assistindo à série: ${serieSelecionada.nomeSerie}`
       );
       console.log(serieSelecionada.assistir());
     } else {
@@ -119,9 +121,9 @@ export class Menu {
 
   compartilhar() {
     console.log("\n--- Compartilhar ---");
-    const opcao = prompt("Escolha o tipo de mídia (1. Filme / 2. Série): ");
+    const escolha = prompt("Escolha o tipo de mídia (1. Filme / 2. Série): ");
 
-    switch (opcao) {
+    switch (escolha) {
       case "1":
         this.mostrarMenuFilmes();
         const opcaoFilme = prompt("Escolha o filme pelo número: ");
