@@ -20,37 +20,27 @@ export default class Series extends Filme {
 const vetorSeries = [
   {
     id: "Série 1",
-    nome: "Breaking Bad",
-    nomeSerie: "Breaking Bad",
+    nome: "Macho Alfa",
+    nomeSerie: "Macho Alfa",
     duracao: 45,
     sinopse:
-      "Um professor de química se torna um fabricante de metanfetaminas após descobrir que tem câncer terminal.",
-    ano: 2008,
-    episodio: 62,
-    temporada: 5,
+      " Quatro amigos que, após perceberem as mudanças na sociedade e nas questões de gênero, decidem que precisam repensar seus comportamentos e se readaptar.",
+    ano: 2024,
+    episodio: 4,
+    temporada: 1,
   },
   {
     id: "Série 2",
-    nome: "Stranger Things",
-    nomeSerie: "Stranger Things",
-    duracao: 50,
+    nome: "Uma família quase perfeita",
+    nomeSerie: "Uma família quase perfeita",
+    duracao: 30,
     sinopse:
-      "Em uma cidade pequena, crianças enfrentam mistérios sobrenaturais envolvendo experiências secretas do governo e forças sobrenaturais.",
+      " Uma jovem misteriosa acusada de assassinar o namorado. A mãe da garota, uma advogada famosa, e o pai, um religioso respeitado, unem forças para defender a filha.",
     ano: 2016,
-    episodio: 25,
-    temporada: 3,
+    episodio: 10,
+    temporada: 2,
   },
-  {
-    id: "Série 3",
-    nome: "Game of Thrones",
-    nomeSerie: "Game of Thrones",
-    duracao: 60,
-    sinopse:
-      "Nove famílias nobres lutam pelo controle sobre as terras míticas de Westeros, enquanto um antigo inimigo retorna depois de estar adormecido por milhares de anos.",
-    ano: 2011,
-    episodio: 73,
-    temporada: 8,
-  },
+
 ];
 
 // Transformando cada objeto do vetor em uma instância da classe Series
