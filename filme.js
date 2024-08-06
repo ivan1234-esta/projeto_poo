@@ -15,7 +15,7 @@ export default class Filme {
   }
 }
 
-let dataFilmes = [
+const dataFilmes = [
   new Filme("Divertidamente 2", 1, "Divertidamente 2 marca a sequência da famosa história de Riley (Kaitlyn Dias). Com um salto temporal, a garota agora se encontra mais velha, com 13 anos de idade, passando pela tão temida pré-adolescência.", 2024),
   new Filme("Mufasa: O Rei Leão", 2, "história de Mufasa, o pai de Simba. Com muitos musicais, pode ser que personagens conhecidos do público apareçam no longa.", 2014),
 ]
