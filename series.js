@@ -17,12 +17,12 @@ export default class Series extends Filme {
   }
 }
 
-const dataSeries = [
+let dataSeries = [
   {
     id: "Série 1",
     nome: "Macho Alfa",
     nomeSerie: "Macho Alfa",
-    duracao: 45,
+    duracao: 60,
     sinopse:
       " Quatro amigos que, após perceberem as mudanças na sociedade e nas questões de gênero, decidem que precisam repensar seus comportamentos e se readaptar.",
     ano: 2024,
@@ -36,7 +36,7 @@ const dataSeries = [
     duracao: 30,
     sinopse:
       " Uma jovem misteriosa acusada de assassinar o namorado. A mãe da garota, uma advogada famosa, e o pai, um religioso respeitado, unem forças para defender a filha.",
-    ano: 2016,
+    ano: 2023,
     episodio: 10,
     temporada: 2,
   },
