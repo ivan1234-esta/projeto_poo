@@ -13,11 +13,11 @@ export default class Series extends Filme {
   }
 
   compartilhar() {
-    return `Veja tambem a série ${this.nomeSerie}, temporada ${this.temporada}, episodio ${this.episodio}. Sinopse: ${this.sinopse}. Foi lançada em ${this.ano}.`;
+    return `Super série ${this.nomeSerie}, temporada ${this.temporada}, episodio ${this.episodio}. Sinopse: ${this.sinopse}. Foi lançada em ${this.ano}.`;
   }
 }
 
-const vetorSeries = [
+const dataSeries = [
   {
     id: "Série 1",
     nome: "Macho Alfa",
@@ -42,9 +42,7 @@ const vetorSeries = [
   },
 
 ];
-
-// Transformando cada objeto do vetor em uma instância da classe Series
-vetorSeries = vetorSeries.map((serie) => {
+dataSeries = dataSeries.map((serie) => {
   return new Series(
     serie.nome,
     serie.nomeSerie,
@@ -56,4 +54,4 @@ vetorSeries = vetorSeries.map((serie) => {
   );
 });
 
-export { vetorSeries }; // Exportando o vetor de séries
+export { dataSeries }; 
